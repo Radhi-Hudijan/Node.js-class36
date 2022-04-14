@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 app.post("/weather", (req, res) => {
   if (req.body.cityName) {
     const cityName = req.body.cityName;
-    res.status(200).send({ cityName });
+    res.status(200).json({ cityName });
   } else {
     res.status(400).json({ msg: "Sorry No city found" });
   }
