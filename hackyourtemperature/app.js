@@ -22,7 +22,7 @@ app.post("/weather/:city", async (req, res) => {
     const cityTempInCelsius = Math.round(data.main.temp - 273.15);
     res
       .status(200)
-      .send(`The temperature of ${cityName} is : ${cityTempInCelsius} C`);
+      .json({weatherText:`The temperature of ${cityName} is ${cityTempInCelsius} C`});
   } catch (error) {
     res.status(404).json({ weatherText: "City is not found!" });
   }
